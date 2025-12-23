@@ -83,6 +83,6 @@ text = "PHASE 1 TEST LEVEL
 Core Character Controller
 
 WASD/Arrows: Move
-Space: Jump (hold for higher jump)
+W/Up: Jump (hold for higher jump)
 Wall Jump: Jump while touching wall
 Press ESC to return to menu"

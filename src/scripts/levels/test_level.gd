@@ -7,7 +7,7 @@ func _ready() -> void:
 	print("Testing player movement and physics")
 	print("Controls:")
 	print("  WASD/Arrows - Move")
-	print("  Space - Jump (hold for higher jump)")
+	print("  W/Up - Jump (hold for higher jump)")
 	print("  Wall Jump - Jump while touching red walls")
 	print("  ESC - Return to menu")
 	print("")

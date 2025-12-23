@@ -60,7 +60,7 @@ statue-game/
 ## Controls
 
 - **Movement**: WASD or Arrow Keys
-- **Jump**: Space
+- **Jump**: W or Up Arrow
 - **Interact**: Space or Z
 - **Turn to Statue**: C or X
 - **Restart Level**: R

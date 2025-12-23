@@ -22,9 +22,9 @@
 
 ### Jumping
 ```
-[ ] Press Space to jump
-[ ] Hold Space for maximum height
-[ ] Release Space early for shorter jump
+[ ] Press W or Up Arrow to jump
+[ ] Hold button for maximum height
+[ ] Release button early for shorter jump
 [ ] Jump height is consistent
 [ ] Can't double jump (unless wall jumping)
 [ ] Jump feels responsive (no delay)
@@ -140,7 +140,7 @@ Expected: All movements feel smooth and responsive
 ```
 1. Walk to edge of Platform1
 2. Walk off WITHOUT jumping
-3. Press Space while falling
+3. Press Jump (W/Up) while falling
 4. Should still jump if within 0.15 seconds
 
 Expected: Forgiving platforming, can jump after leaving ledge
@@ -158,9 +158,9 @@ Expected: Can climb up by alternating wall jumps
 
 ### Scenario 4: Variable Jump
 ```
-1. Tap Space quickly - note jump height
-2. Hold Space fully - note jump height
-3. Release Space halfway through jump - note height
+1. Tap Jump (W/Up) quickly - note jump height
+2. Hold Jump fully - note jump height
+3. Release Jump halfway through jump - note height
 
 Expected: Three different jump heights based on input
 ```

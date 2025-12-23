@@ -14,7 +14,7 @@ Phase 1 focused on creating a solid, responsive 2D platformer character controll
 2. **Movement Mechanics**
    - **Horizontal Movement**: WASD/Arrow keys with smooth acceleration
    - **Gravity System**: Realistic falling with max fall speed
-   - **Jump**: Space bar with variable height (hold for higher, release early for lower)
+   - **Jump**: W/Up Arrow with variable height (hold for higher, release early for lower)
    - **Coyote Time**: 0.15 second grace period after leaving a ledge
    - **Wall Sliding**: Slower fall speed when touching walls
    - **Wall Jump**: Jump away from walls while in the air
@@ -55,9 +55,9 @@ Phase 1 focused on creating a solid, responsive 2D platformer character controll
    - Notice smooth acceleration and deceleration
    - Character sprite flips based on direction
 
-2. **Jump**: Press Space
-   - Hold Space for maximum jump height
-   - Release Space early for a shorter jump
+2. **Jump**: Press W or Up Arrow
+   - Hold button for maximum jump height
+   - Release button early for a shorter jump
    - Try jumping repeatedly to feel the responsiveness
 
 3. **Coyote Time**: Walk off a platform edge
