@@ -7,12 +7,13 @@
 size = Vector2(12, 20)
 
 [node name="Player" type="CharacterBody2D"]
+z_index = 100
 script = ExtResource("1_player")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(1, 0, 0, 1)
 position = Vector2(0, -10)
-scale = Vector2(0.375, 0.625)
+scale = Vector2(1, 1)
 texture = ExtResource("2_sprite")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

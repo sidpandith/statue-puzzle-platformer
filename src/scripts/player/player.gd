@@ -39,11 +39,23 @@ var can_create_statue: bool = true
 @onready var sprite: Sprite2D = $Sprite2D
 
 
+# Debug timer
+var debug_timer: float = 0.0
+
 func _ready() -> void:
 	print("Player initialized")
+	print("Initial Position: ", global_position)
+	print("Visible: ", visible)
+	print("Sprite Modulate: ", sprite.modulate)
 
 
 func _physics_process(delta: float) -> void:
+	# Debug printing every 1 second
+	debug_timer += delta
+	if debug_timer >= 1.0:
+		debug_timer = 0.0
+		print("Player Pos: ", global_position, " | Vel: ", velocity, " | Visible: ", visible, " | Scale: ", sprite.scale)
+	
 	# Get input direction
 	var input_direction = Input.get_axis("move_left", "move_right")
 	

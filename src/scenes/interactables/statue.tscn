@@ -7,6 +7,7 @@
 size = Vector2(12, 20)
 
 [node name="Statue" type="CharacterBody2D" groups=["resettable", "statues"]]
+z_index = 50
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_statue")
