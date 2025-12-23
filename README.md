@@ -13,22 +13,21 @@ When you turn into a statue, you respawn at the level start while your statue re
 
 ## Current Status
 
-**Phase 1: Core Character Controller** ✅ COMPLETE
+**Phase 2: Statue Creation and Management** ✅ COMPLETE
 
-The player character controller is fully implemented with:
-- Smooth horizontal movement with acceleration
-- Jump mechanics with coyote time
-- Variable jump height
-- Wall sliding and wall jumping
-- Responsive physics and controls
+The core puzzle mechanic is implemented:
+- Turn into a statue (C/X) to create platforms
+- Statue persistence and management (max 15)
+- Soft reset mechanics (respawn player, keep statues)
+- Statue physics (heavy gravity, pushable)
 
-See [README_PHASE_1.md](src/README_PHASE_1.md) for detailed Phase 1 information.
+See [README_PHASE_2.md](src/README_PHASE_2.md) for detailed Phase 2 information.
 
 ## Development Phases
 
 - [x] **Phase 0** - Project Setup
 - [x] **Phase 1** - Core Character Controller
-- [ ] **Phase 2** - Statue Creation and Management
+- [x] **Phase 2** - Statue Creation and Management
 - [ ] **Phase 3** - Interactables and Puzzle Hooks
 - [ ] **Phase 4** - Level Framework, HUD, and Stars
 - [ ] **Phase 5** - Content Creation and Polish

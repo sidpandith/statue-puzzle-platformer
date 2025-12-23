@@ -19,12 +19,19 @@ extends CharacterBody2D
 @export var wall_jump_velocity: Vector2 = Vector2(250, -300)
 @export var wall_slide_speed: float = 50.0
 
+# Statue parameters
+@export var push_force: float = 100.0
+var statue_scene: PackedScene = preload("res://scenes/interactables/statue.tscn")
+var statue_manager: StatueManager
+var spawn_point: Vector2
+
 # Internal state
 var coyote_timer: float = 0.0
 var jump_buffer_timer: float = 0.0
 var jump_buffer_time: float = 0.1
 var was_on_floor: bool = false
 var facing_direction: int = 1  # 1 = right, -1 = left
+var can_create_statue: bool = true
 
 # Wall detection
 @onready var wall_ray_left: RayCast2D = $WallRayLeft
@@ -57,11 +64,17 @@ func _physics_process(delta: float) -> void:
 	# Handle wall sliding and wall jump
 	_handle_wall_mechanics(delta)
 	
+	# Handle statue creation
+	_handle_statue_creation()
+	
 	# Update coyote time
 	_update_coyote_time(delta)
 	
 	# Move the character
 	move_and_slide()
+	
+	# Push rigid bodies or statues
+	_handle_pushing()
 	
 	# Track floor state for coyote time
 	was_on_floor = is_on_floor()
@@ -123,6 +136,59 @@ func _handle_wall_mechanics(delta: float) -> void:
 			velocity.x = wall_normal.x * wall_jump_velocity.x
 			velocity.y = wall_jump_velocity.y
 			print("Wall jump!")
+
+
+func _handle_statue_creation() -> void:
+	"""Create statue and respawn if input pressed"""
+	if can_create_statue and Input.is_action_just_pressed("statue"):
+		if statue_manager:
+			# Instantiate statue
+			var statue = statue_scene.instantiate()
+			statue.global_position = global_position
+			
+			# Match direction via sprite flipping logic (if Statue has a sprite)
+			var statue_sprite = statue.get_node_or_null("Sprite2D")
+			if statue_sprite:
+				statue_sprite.flip_h = sprite.flip_h
+			
+			# Add to scene tree (parent of player is usually the level)
+			get_parent().add_child(statue)
+			
+			# Register with manager
+			statue_manager.add_statue(statue)
+			
+			print("Statue created!")
+			
+			# Respawn player (Soft Reset)
+			_soft_reset()
+		else:
+			print("Error: No StatueManager assigned to Player!")
+
+
+func _soft_reset() -> void:
+	"""Respawn player and reset interactables"""
+	if spawn_point:
+		global_position = spawn_point
+		velocity = Vector2.ZERO
+		print("Player respawned (Soft Reset)")
+	
+	# TODO: Reset interactables here in Phase 3
+
+
+func _handle_pushing() -> void:
+	"""Push interactable objects like Statues"""
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collider = collision.get_collider()
+		
+		if collider is Statue:
+			# Push the statue
+			# Calculate push direction (horizontal only)
+			var push_dir = Vector2(-collision.get_normal().x, 0).normalized()
+			
+			# Apply push force if we are moving into it
+			if push_dir.dot(velocity.normalized()) > 0.5:
+				collider.push(push_dir * push_force)
 
 
 func _update_coyote_time(delta: float) -> void:
