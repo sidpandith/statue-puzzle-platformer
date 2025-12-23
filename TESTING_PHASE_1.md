@@ -19,6 +19,7 @@
 [ ] Sprite flips to face movement direction
 [ ] Can change direction mid-air
 [ ] Press R to reset level (player returns to spawn)
+[ ] UI instructions fade out after first movement
 ```
 
 ### Jumping
