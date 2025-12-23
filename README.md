@@ -13,21 +13,21 @@ When you turn into a statue, you respawn at the level start while your statue re
 
 ## Current Status
 
-**Phase 0: Project Setup** ✅ COMPLETE
+**Phase 1: Core Character Controller** ✅ COMPLETE
 
-The project foundation is complete with:
-- Godot 4 project configured for pixel art
-- Game state management and save system
-- Scene loading with transitions
-- Input mappings for all game actions
-- Organized project structure
+The player character controller is fully implemented with:
+- Smooth horizontal movement with acceleration
+- Jump mechanics with coyote time
+- Variable jump height
+- Wall sliding and wall jumping
+- Responsive physics and controls
 
-See [README_PHASE_0.md](src/README_PHASE_0.md) for detailed Phase 0 information.
+See [README_PHASE_1.md](src/README_PHASE_1.md) for detailed Phase 1 information.
 
 ## Development Phases
 
 - [x] **Phase 0** - Project Setup
-- [ ] **Phase 1** - Core Character Controller
+- [x] **Phase 1** - Core Character Controller
 - [ ] **Phase 2** - Statue Creation and Management
 - [ ] **Phase 3** - Interactables and Puzzle Hooks
 - [ ] **Phase 4** - Level Framework, HUD, and Stars
