@@ -1,0 +1,4 @@
+I am a highschooler trying to lear Godot. I would like to build a game using godot using the specifications I have laid down in ~/src/godot/statue-game/design/specifications.md.  
+For all code, your root folder will be ~/src/godot/statue-game/src.  I need detailed summary for each step of your way.  You need to save logs of each prompt + your response in ~/src/godot/statue-game/logs folder.  Add date and time stamp to the log file. 
+
+FOr now, Go read the specifcations, and implement the Phase 0 of it. I have godot installed on this machine. When you are ready, tell me, and I will load up the project in Godot and test.  you need to also tell me what I should be able to test at the end of this phase. 
