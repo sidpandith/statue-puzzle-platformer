@@ -20,7 +20,7 @@ extends CharacterBody2D
 @export var wall_slide_speed: float = 50.0
 
 # Statue parameters
-@export var push_force: float = 100.0
+@export var push_force: float = 300.0
 var statue_scene: PackedScene = preload("res://scenes/interactables/statue.tscn")
 var statue_manager: StatueManager
 var spawn_point: Vector2
@@ -184,8 +184,9 @@ func _handle_pushing() -> void:
 			var push_dir = Vector2(-collision.get_normal().x, 0).normalized()
 			
 			# Apply push force if we are moving into it
-			if push_dir.dot(velocity.normalized()) > 0.5:
-				collider.push(push_dir * push_force)
+			# Note: We rely on collision normal to determine direction. 
+			# move_and_slide() resets velocity on collision, so we can't check velocity here.
+			collider.push(push_dir * push_force)
 
 
 func _update_coyote_time(delta: float) -> void:
