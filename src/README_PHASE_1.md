@@ -54,6 +54,7 @@ Phase 1 focused on creating a solid, responsive 2D platformer character controll
 1. **Walk**: Press A/D or Left/Right arrows
    - Notice smooth acceleration and deceleration
    - Character sprite flips based on direction
+   - **Press R** to reset the level at any time
 
 2. **Jump**: Press W or Up Arrow
    - Hold button for maximum jump height

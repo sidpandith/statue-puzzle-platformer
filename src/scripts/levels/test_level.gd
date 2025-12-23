@@ -9,6 +9,7 @@ func _ready() -> void:
 	print("  WASD/Arrows - Move")
 	print("  W/Up - Jump (hold for higher jump)")
 	print("  Wall Jump - Jump while touching red walls")
+	print("  R - Restart Level")
 	print("  ESC - Return to menu")
 	print("")
 	print("Test Features:")
@@ -17,6 +18,7 @@ func _ready() -> void:
 	print("  - Jump with coyote time (grace period after leaving ledge)")
 	print("  - Variable jump height (release early for shorter jump)")
 	print("  - Wall sliding and wall jump")
+	print("  - Level reset functionality")
 
 
 func _process(_delta: float) -> void:
@@ -24,3 +26,8 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		print("Returning to main menu...")
 		SceneLoader.load_scene("res://scenes/ui/main_menu.tscn")
+	
+	# Restart level
+	if Input.is_action_just_pressed("restart_level"):
+		print("Restarting level...")
+		SceneLoader.reload_current_scene()

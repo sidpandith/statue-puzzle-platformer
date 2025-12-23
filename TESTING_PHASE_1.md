@@ -18,6 +18,7 @@
 [ ] Character decelerates smoothly when releasing keys
 [ ] Sprite flips to face movement direction
 [ ] Can change direction mid-air
+[ ] Press R to reset level (player returns to spawn)
 ```
 
 ### Jumping
